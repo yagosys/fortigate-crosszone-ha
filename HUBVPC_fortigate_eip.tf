@@ -15,8 +15,8 @@ resource "alicloud_eip" "FgbMgmtEip" {
 
 resource "alicloud_eip_association" "eip_asso_fga_mgmt" {
   count = var.mgmt_eip=="1" ? 1:0
-
- depends_on = [time_sleep.wait_60_seconds_after_create_primary_fortigate_interface3]
+ depends_on      = [alicloud_network_interface.PrimaryFortiGateInterface3]
+// depends_on = [time_sleep.wait_60_seconds_after_create_primary_fortigate_interface3]
   allocation_id      = alicloud_eip.FgaMgmtEip[count.index].id
   instance_type      = "NetworkInterface"
   instance_id        = alicloud_network_interface.PrimaryFortiGateInterface3.id
@@ -24,7 +24,8 @@ resource "alicloud_eip_association" "eip_asso_fga_mgmt" {
 }
 
 resource "alicloud_eip_association" "eip_asso_fgb_mgmt" {
- depends_on = [time_sleep.wait_60_seconds_after_create_secondary_fortigate_interface3,alicloud_eip.FgbMgmtEip]
+  depends_on      = [alicloud_network_interface.SecondaryFortiGateInterface3]
+// depends_on = [time_sleep.wait_60_seconds_after_create_secondary_fortigate_interface3,alicloud_eip.FgbMgmtEip]
   count = var.mgmt_eip=="1" ? 1:0
   allocation_id      = alicloud_eip.FgbMgmtEip[count.index].id
   instance_type      = "NetworkInterface"

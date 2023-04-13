@@ -1,4 +1,5 @@
 resource "alicloud_instance" "PrimaryFortigate" {
+depends_on=[alicloud_instance.PrimaryFortigate,time_sleep.wait_60_seconds_after_create_internal_a_vswitch]
 
  availability_zone = "${data.alicloud_zones.default.zones.0.id}"
  image_id = "${length(var.fortigate_instance_ami) > 5 ? var.fortigate_instance_ami : data.alicloud_images.ecs_image[0].images.0.id}"
@@ -24,6 +25,7 @@ resource "alicloud_instance" "PrimaryFortigate" {
 
 
 resource "alicloud_instance" "SecondaryFortigate" {
+depends_on=[alicloud_instance.PrimaryFortigate,time_sleep.wait_60_seconds_after_create_internal_b_vswitch]
   count=var.num_secondary_instances
   availability_zone = data.alicloud_zones.default.zones.1.id
   security_groups   = alicloud_security_group.SecGroup.*.id

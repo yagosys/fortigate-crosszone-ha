@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "alicloud" {
-	profile = var.account_region== "china" ? "andywang" : "default"
+	profile = "default"
   	region  = var.region
 }
 

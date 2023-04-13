@@ -1,8 +1,5 @@
-//fortigate_instance_ami="m-j6cj2liju58d88zmgbdg" //fortigate hongkong china
 fortigate_instance_ami="auto"
 region="cn-hongkong"
-account_region="intl"
-ALIYUN__region="cn-hongkong"
 activefgtlicense="~/license/FGVMULTM23000023.lic"
 passivefgtlicense="~/license/FGVMULTM23000022.lic"
 //product="FortiGate.*BYOL.*6.4.12"

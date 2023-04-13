@@ -1,13 +1,13 @@
 resource "alicloud_eip" "FgaMgmtEip" {
   count = var.mgmt_eip=="1" ? 1:0
-  name                 = "EIP1"
+  address_name = "EIP1"
   bandwidth            = "1"
   internet_charge_type = "PayByTraffic"
 }
 
 resource "alicloud_eip" "FgbMgmtEip" {
   count = var.num_secondary_instances=="1" ? 1:0
-  name                 = "EIP2"
+  address_name = "EIP2"
   bandwidth            = "1"
   internet_charge_type = "PayByTraffic"
 }
@@ -46,7 +46,7 @@ output "SecondaryFortigate_MGMT_EIP" {
 
 resource "alicloud_eip" "PublicInternetIp" {
   count = var.eip=="1" ? 1 : 0
-  name                 = "EIP3"
+  address_name = "EIP3"
   bandwidth            = "5"
   internet_charge_type = "PayByTraffic"
 }

@@ -24,9 +24,9 @@ EOF
 
 //              
 resource "alicloud_ram_policy" "policy" {
-  name     = "Fortigate-HA-New-rule-${random_string.random_name_post.result}"
+  policy_name     = "Fortigate-HA-New-rule-${random_string.random_name_post.result}"
   count    = var.iam != "Fortigate-HA-New" ? 1 : 0
-  document = <<EOF
+  policy_document = <<EOF
     {           
       "Statement": [
         {       

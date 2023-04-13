@@ -6,6 +6,7 @@ passivefgtlicense="~/license/FGVMULTM23000022.lic"
 product="FortiGate.*BYOL.*7.2.4"
 //product="FortiGate.*PAYG.*8.*7.2.4"
 
+key_location="~/.ssh/id_rsa.pub"
 custom_rt="1"
 num_secondary_instances="1"
 eip="1"

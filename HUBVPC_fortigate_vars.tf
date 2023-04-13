@@ -50,3 +50,8 @@ variable "memory_size" {
 variable "eni_amount" {
  default = "4"
 }
+
+variable "key_location" {
+   type=string
+   default = "~/.ssh/id_rsa.pub"
+}

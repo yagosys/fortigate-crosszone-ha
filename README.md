@@ -57,7 +57,6 @@ ssh into the fortigate via EIP3, the default password is instanceID
 
 ```
 ssh admin@8.217.33.179  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null get sys ha  status
-```
 HA Health Status: OK
 Model: FortiGate-VM64-ALI
 Mode: HA A-P

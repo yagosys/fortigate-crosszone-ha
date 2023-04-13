@@ -1,11 +1,23 @@
 please modify intl.auto.tfvars before deploy
 
 ```
+terraform version
+Terraform v1.0.11
+on linux_amd64
++ provider registry.terraform.io/hashicorp/alicloud v1.160.0
++ provider registry.terraform.io/hashicorp/random v3.1.2
++ provider registry.terraform.io/hashicorp/time v0.7.2
 
+```
+how to run
+```
 terraform init
 
 terraform apply 
 
+```
+sample output
+```
 ActiveFortigateEIP3 = [
   "8.217.33.179",
 ]

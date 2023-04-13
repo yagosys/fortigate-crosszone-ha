@@ -4,6 +4,7 @@ depends_on=[alicloud_instance.PrimaryFortigate,time_sleep.wait_60_seconds_after_
  availability_zone = "${data.alicloud_zones.default.zones.0.id}"
  image_id = "${length(var.fortigate_instance_ami) > 5 ? var.fortigate_instance_ami : data.alicloud_images.ecs_image[0].images.0.id}"
   security_groups   = "${alicloud_security_group.SecGroup.*.id}"
+  key_name          = alicloud_key_pair.example.key_name
   user_data            = data.template_file.activeFortiGate.rendered
 
  instance_type = coalesce(length(data.alicloud_zones.default_hfc6.zones) >1  ? data.alicloud_zones.default_hfc6.available_instance_type : "", length(data.alicloud_zones.default_c5.zones) >1  ? data.alicloud_zones.default_c5.available_instance_type : "", length(data.alicloud_zones.default_hfc5.zones) > 1 ?data.alicloud_zones.default_hfc5.available_instance_type : "", length(data.alicloud_zones.default_sn1ne.zones) >1 ?data.alicloud_zones.default_sn1ne.available_instance_type : "")

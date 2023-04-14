@@ -1,12 +1,12 @@
 please modify intl.auto.tfvars before deploy
 
 ```
-terraform version
-Terraform v1.0.11
+Terraform v1.4.5
 on linux_amd64
-+ provider registry.terraform.io/hashicorp/alicloud v1.160.0
-+ provider registry.terraform.io/hashicorp/random v3.1.2
-+ provider registry.terraform.io/hashicorp/time v0.7.2
++ provider registry.terraform.io/aliyun/alicloud v1.202.0
++ provider registry.terraform.io/hashicorp/random v3.5.1
++ provider registry.terraform.io/hashicorp/template v2.2.0
++ provider registry.terraform.io/hashicorp/time v0.9.1
 
 ```
 how to run

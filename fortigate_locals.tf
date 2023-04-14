@@ -1,6 +1,4 @@
 locals {
-client_source_ip_subnet="13.0.0.0/255.255.255.0"
-admin_api_user="soc2"
 license_type="byol"
 adminsport = "8443"
 activeport1mask = "255.255.255.0"

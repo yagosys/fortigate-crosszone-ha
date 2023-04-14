@@ -1,3 +1,8 @@
+variable "region" {
+  type = string
+  default ="cn-hongkong"
+}
+
 terraform {
   required_providers {
     alicloud = {

@@ -24,9 +24,6 @@ data "template_file" "passiveFortiGate" {
     vpc_ip          = cidrhost(var.hubvpc_vpc_cidr, 0)
     vpc_mask        = cidrnetmask(var.hubvpc_vpc_cidr)
     adminsport      = "${local.adminsport}"
-    client_source_ip_subnet = "${local.client_source_ip_subnet}"
-    admin_api_user = "${local.admin_api_user}"
-    client_vm = "${var.client_vm_private_ip}"
   }
 }
 

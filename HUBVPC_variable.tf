@@ -129,9 +129,6 @@ variable "secondary_fortigate_secondary_private_ip_mask" {
    default = "255.255.255.0"
 }
 
-variable "client_vm_private_ip" {
-   default = "192.168.12.60"
-}
 
 variable "iam" {
 

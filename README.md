@@ -1,4 +1,25 @@
 please modify intl.auto.tfvars before deploy
+```
+//fortigate_instance_ami="m-j6cj2liju58d88zmgbdg" //fortigate hongkong china
+fortigate_instance_ami="auto"
+region="ap-southeast-1"
+account_region="intl"
+ALIYUN__region="cn-hongkong"
+activefgtlicense="~/license/FGVMULTM23000023.lic"
+passivefgtlicense="~/license/FGVMULTM23000022.lic"
+//product="FortiGate.*BYOL.*6.4.12"
+product="FortiGate.*BYOL.*7.2.4"
+//product="FortiGate.*PAYG.*8.*7.2.4"
+
+custom_rt="1"
+num_secondary_instances="1"
+eip="1"
+mgmt_eip="1"
+create_client_vm="0"
+instance="auto"
+```
+
+the terraform and provider version tested
 
 ```
 terraform version

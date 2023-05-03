@@ -1,4 +1,8 @@
-please modify intl.auto.tfvars before deploy
+please modify intl.auto.tfvars before deploy, for example, change the REGION etc.,
+
+
+the version of Terraform and provider tested. lower Terraform version may also work.
+
 
 ```
 Terraform v1.4.5

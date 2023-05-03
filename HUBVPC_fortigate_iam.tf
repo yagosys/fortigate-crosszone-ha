@@ -26,52 +26,33 @@ EOF
 resource "alicloud_ram_policy" "policy" {
   policy_name     = "Fortigate-HA-New-rule-${random_string.random_name_post.result}"
   count    = var.iam != "Fortigate-HA-New" ? 1 : 0
-  policy_document = <<EOF
+  document = <<EOF
     {           
       "Statement": [
         {       
           "Action": [
-                "vpc:*",
                 "vpc:*EipAddress*",
                 "vpc:UntagResources",
                 "vpc:TagResources",
                 "vpc:*VSwitch*",
-                "ecs:*",
-                "eipanycast:*",
-		"cen:*",
                 "ecs:DescribeInstances",
+                "ecs:AddTags",
                 "vpc:DescribeVpcs",
                 "vpc:DescribeVSwitches",
-                "vpc:*Eip*",
-                "vpc:*HighDefinitionMonitor*",
-                "vpc:*HaVip*",
                 "vpc:*RouteTable*",
                 "vpc:*VRouter*",
                 "vpc:*RouteEntry*",
-                "vpc:*VSwitch*",
-                "vpc:*Vpc*",
-                "vpc:*Cen*",
-                "vpc:*Tag*",
-                "vpc:*NetworkAcl*",
-                "ecs:*Instance*"
+                "vpc:*DescribeVpcAttribute"
             
           ],
           "Effect": "Allow",
           "Resource": [
             "*"
           ]
-        },
-        {
-                "Action": [
-                "ecs:*"
-
-            ],
-            "Resource": "*",
-            "Effect": "Allow"
         }
-      ],
-        "Version": "1"
-    }
+       ],
+       "Version": "1"
+   }
 EOF
 
   description = "this is a policy test"
